@@ -4,7 +4,7 @@ Name:		ggz-gtk-client
 Version:	0.0.14
 Release:	1
 License:	GPL v2+
-Group:		Applications
+Group:		Applications/Games
 Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/0.0.14/%{name}-%{version}.tar.gz
 # Source0-md5:	7b8992f4eaf96c41923c31a946bc73fb
 Source1:	%{name}.xpm
