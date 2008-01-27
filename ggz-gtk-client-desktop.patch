@@ -1,0 +1,21 @@
+--- ggz-gtk-client-0.0.14/ggz-gtk.desktop~	2007-01-16 19:51:03.000000000 +0100
++++ ggz-gtk-client-0.0.14/ggz-gtk.desktop	2008-01-26 12:30:46.000000000 +0100
+@@ -3,14 +3,17 @@
+ GenericName=Gtk+ internet gaming center
+ GenericName[de]=Internet-Spielezentrum (Gtk+)
+ GenericName[fr]=Centre de jeux d'internet (Gtk+)
++GenericName[pl]=Internetowe centrum gier (Gtk+)
+ GenericName[pt]=Centro de jogos em rede (Gtk+)
+ Comment=GGZ Core Client
+ Comment[de]=GGZ-Core-Client
+ Comment[fr]=Core Client GGZ
++Comment[pl]=Klient GGZ
+ Comment[pt]=Cliente núcleo do GGZ
+ 
+ Type=Application
+ Exec=ggz-gtk
+-Icon=
++Icon=ggz-gtk-client.xpm
+ Terminal=false
+ Categories=X-GGZ;Network;ConsoleOnly;
++# vi: encoding=utf-8
