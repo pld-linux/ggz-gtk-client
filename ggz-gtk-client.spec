@@ -1,20 +1,23 @@
 Summary:	GTK+ version of GGZ client
-Summary(pl.UTF-8):	Klient napisany w GTK+ dla GGZ
+Summary(pl.UTF-8):	Klient GGZ napisany z użyciem GTK+
 Name:		ggz-gtk-client
 Version:	0.0.14
 Release:	1
 License:	GPL v2+
-Group:		Applications/Games
-Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/0.0.14/%{name}-%{version}.tar.gz
+Group:		X11/Applications/Games
+Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	7b8992f4eaf96c41923c31a946bc73fb
 Source1:	%{name}.xpm
 Patch0:		%{name}-desktop.patch
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
+# gaim plugin?
+#BuildRequires:	gaim-devel >= 1.5.0
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libggz-devel >= 0.0.14
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -24,34 +27,37 @@ and be spectator other people's games. This is GTK+ version of GGZ
 client.
 
 %description -l pl.UTF-8
-Klienty GGZ umożliwiają graczą dostęp do serwerów GGZ z
+Programy klienckie GGZ umożliwiają graczom dostęp do serwerów GGZ z
 możliwością rozmowy, poznawania innych ludzi w grze, granie z nimi,
 obserwowanie punktacji oraz obserwowanie rozgrywek innych ludzi. Ten
-klient GGZ to wersja napisana w GTK+.
+klient GGZ to wersja napisana z użyciem GTK+.
 
 %package devel
-Summary:	Header files for ggz-gtk-client
-Summary(pl.UTF-8):	Pliki nag�~Bówkowe dla ggz-gtk-client
-Group:		Development/Libraries
+Summary:	Header files for ggz-gtk library
+Summary(pl.UTF-8):	Pliki nagłówkowe biblioteki ggz-gtk
+Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	ggz-client-libs-devel >= 0.0.14
+Requires:	gtk+2-devel >= 1:2.0.0
+Requires:	libggz-devel >= 0.0.14
 
 %description devel
-Header files for ggz-gtk-client.
+Header files for ggz-gtk library.
 
 %description devel -l pl.UTF-8
-Pliki nag�~Bówkowe dla ggz-gtk-client.
+Pliki nagłówkowe biblioteki ggz-gtk.
 
 %package static
-Summary:	Static ggz-gtk-client library
-Summary(pl.UTF-8):	Statyczna biblioteka ggz-gtk-client
-Group:		Development/Libraries
+Summary:	Static ggz-gtk library
+Summary(pl.UTF-8):	Statyczna biblioteka ggz-gtk
+Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static ggz-gtk-client library.
+Static ggz-gtk library.
 
 %description static -l pl.UTF-8
-Statyczna biblioteka ggz-gtk-client.
+Statyczna biblioteka ggz-gtk.
 
 %prep
 %setup -q
@@ -86,19 +92,20 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS QuickStart.GGZ README* TODO
 %attr(755,root,root) %{_bindir}/ggz-gtk
-%attr(755,root,root) %{_libdir}/lib*.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/lib*.so.1
+%attr(755,root,root) %{_libdir}/libggz-gtk.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libggz-gtk.so.1
 %{_datadir}/ggz
 %{_desktopdir}/ggz-gtk.desktop
-%{_mandir}/man6/*.6*
+%{_mandir}/man6/ggz-gtk.6*
 %{_pixmapsdir}/%{name}.xpm
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
-%{_includedir}/*
+%attr(755,root,root) %{_libdir}/libggz-gtk.so
+%{_libdir}/libggz-gtk.la
+%{_includedir}/ggz-embed.h
+%{_includedir}/ggz-gtk.h
 
 %files static
 %defattr(644,root,root,755)
-%{_libdir}/lib*.a
+%{_libdir}/libggz-gtk.a
