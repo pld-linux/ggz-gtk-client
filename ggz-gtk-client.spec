@@ -94,7 +94,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ggz-gtk
 %attr(755,root,root) %{_libdir}/libggz-gtk.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libggz-gtk.so.1
-%{_datadir}/ggz
+%{_datadir}/ggz/*
 %{_desktopdir}/ggz-gtk.desktop
 %{_mandir}/man6/ggz-gtk.6*
 %{_pixmapsdir}/%{name}.xpm
