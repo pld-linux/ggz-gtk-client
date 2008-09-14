@@ -17,6 +17,7 @@ BuildRequires:	automake
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libggz-devel >= 0.0.14
+BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
