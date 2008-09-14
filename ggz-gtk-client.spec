@@ -64,6 +64,7 @@ Statyczna biblioteka ggz-gtk.
 %patch0 -p1
 
 %build
+%{__libtoolize}
 %{__aclocal} -I m4 -I m4/ggz
 %{__autoconf}
 %{__autoheader}
