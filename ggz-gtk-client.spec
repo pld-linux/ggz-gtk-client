@@ -14,6 +14,7 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 # gaim plugin?
 #BuildRequires:	gaim-devel >= 1.5.0
+BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libggz-devel >= 0.0.14
