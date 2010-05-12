@@ -17,5 +17,6 @@
 -Icon=
 +Icon=ggz-gtk-client.xpm
  Terminal=false
- Categories=X-GGZ;Network;ConsoleOnly;
+-Categories=X-GGZ;Network;ConsoleOnly;
++Categories=X-GGZ;Network;ConsoleOnly;Chat;
 +# vi: encoding=utf-8
