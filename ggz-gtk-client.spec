@@ -2,7 +2,7 @@ Summary:	GTK+ version of GGZ client
 Summary(pl.UTF-8):	Klient GGZ napisany z użyciem GTK+
 Name:		ggz-gtk-client
 Version:	0.0.14.1
-Release:	6
+Release:	7
 License:	GPL v2+
 Group:		X11/Applications/Games
 Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
