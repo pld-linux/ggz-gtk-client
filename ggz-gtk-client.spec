@@ -2,17 +2,17 @@ Summary:	GTK+ version of GGZ client
 Summary(pl.UTF-8):	Klient GGZ napisany z użyciem GTK+
 Name:		ggz-gtk-client
 Version:	0.0.14.1
-Release:	7
+Release:	8
 License:	GPL v2+
 Group:		X11/Applications/Games
-Source0:	http://ftp.belnet.be/packages/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
+Source0:	http://mirrors.dotsrc.org/ggzgamingzone/ggz/%{version}/%{name}-%{version}.tar.gz
 # Source0-md5:	87f67ff01f867bd04ba894a7c6a9f7fc
 Source1:	%{name}.xpm
 Patch0:		%{name}-desktop.patch
 URL:		http://www.ggzgamingzone.org/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-# gaim plugin?
+# gaim plugin (obsolete, gaim has been replaced by pidgin)
 #BuildRequires:	gaim-devel >= 1.5.0
 BuildRequires:	gettext-devel
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
@@ -30,8 +30,8 @@ client.
 
 %description -l pl.UTF-8
 Programy klienckie GGZ umożliwiają graczom dostęp do serwerów GGZ z
-możliwością rozmowy, poznawania innych ludzi w grze, granie z nimi,
-obserwowanie punktacji oraz obserwowanie rozgrywek innych ludzi. Ten
+możliwością rozmowy, poznawania innych ludzi w grze, grania z nimi,
+obserwowania punktacji oraz obserwowania rozgrywek innych ludzi. Ten
 klient GGZ to wersja napisana z użyciem GTK+.
 
 %package devel
@@ -83,6 +83,8 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 install %{SOURCE1} $RPM_BUILD_ROOT%{_pixmapsdir}
 
+%{__mv} $RPM_BUILD_ROOT%{_datadir}/locale/{sr@Latn,sr@latin}
+
 %find_lang %{name} --all-name
 
 %clean
@@ -97,7 +99,8 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/ggz-gtk
 %attr(755,root,root) %{_libdir}/libggz-gtk.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libggz-gtk.so.1
-%{_datadir}/ggz/*
+%{_datadir}/ggz/ggz-gtk-client
+%{_datadir}/ggz/help
 %{_desktopdir}/ggz-gtk.desktop
 %{_mandir}/man6/ggz-gtk.6*
 %{_pixmapsdir}/%{name}.xpm
