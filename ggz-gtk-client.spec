@@ -14,7 +14,7 @@ BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 # gaim plugin (obsolete, gaim has been replaced by pidgin)
 #BuildRequires:	gaim-devel >= 1.5.0
-BuildRequires:	gettext-devel
+BuildRequires:	gettext-tools
 BuildRequires:	ggz-client-libs-devel >= 0.0.14
 BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	libggz-devel >= 0.0.14
